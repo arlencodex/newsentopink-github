@@ -438,58 +438,66 @@
     
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .article-outer {
+   /* ===== Desktop & Tablet (Default) ===== */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar-nav {
+    display: flex;
+    gap: 24px;
+}
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== Tablet ===== */
+
+@media (max-width: 900px) {
+
+    .article-outer {
         grid-template-columns: 1fr;
         gap: 40px;
-        padding: 28px 18px;
-      }
+    }
 
-      .sidebar-sticky {
+    .sidebar-sticky {
         position: static;
-      }
-
-      .about-header h1 {
-        font-size: 34px;
-      }
-
-      .about-header p {
-        font-size: 18px;
-        padding-left: 16px;
-      }
-
-      .topbar {
-        padding: 0 18px;
-      }
-
-      .topbar-nav {
-        display: none;
-      }
-
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 24px 18px;
-      }
-
-      .career-list {
-        flex-direction: column;
-        gap: 2px;
-      }
     }
 
-    @media (max-width: 480px) {
-      .about-header h1 {
+    .more-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-headline {
+        font-size: 32px;
+    }
+
+    /* Navigation stays visible on tablets */
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 480px) {
+
+    .article-headline {
         font-size: 28px;
-      }
-
-      .contact-card {
-        padding: 20px 16px;
-      }
     }
 
-    /* small extra */
-    .mt-2 {
-      margin-top: 8px;
+    /* Hide desktop navigation */
+    .topbar-nav {
+        display: none;
     }
+
+    /* Show hamburger only on phones */
+    .mobile-menu-btn {
+        display: block;
+    }
+}
